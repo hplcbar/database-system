@@ -73,7 +73,7 @@ def new():
 	return render_template("new.html")
 
 ## This is the backend code for editing/removing values in the database.
-##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 # @app.route('/edit', method=["POST"])
 # def edit():
