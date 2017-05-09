@@ -69,6 +69,8 @@ def new():
 ## This is the backend code for editing/removing values in the database.
 ##vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
+##
+
 @app.route("/doedit")
 def doedit():
 	return render_template ("doedit.html")
@@ -76,7 +78,9 @@ def doedit():
 @app.route("/edit", methods=["POST", "GET"])
 def edit():
 	if request.method == 'POST':
+
 		name = request.form["item"]
+
 		conn = sqlite3.connect("stock.db")
 		c = conn.cursor()
 		c.execute("SELECT * FROM data WHERE name=?;", (name,))
@@ -95,7 +99,9 @@ def editchanges():
 		return'failed'
 
 
-
+@app.route("/editedchange", methods=["POST", "GET"])
+def editedchange():
+	return request.form["editName"]
 
 
 

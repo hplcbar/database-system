@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- editchanges-->
 <html>
 <title>Database search tool</title>
 <meta charset="UTF-8">
@@ -44,12 +45,16 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </thead>
     <tbody>
         <tr>
+
+  <form method="post" action="{{url_for('editedchange')}}">
             <td>{{ value_name.id }}:  <input type="text" name="editId" value=""><br></td>
             <td>{{ value_name.name }}:  <input type="text" name="editName" value=""><br></td>
-            <td>${{ value_name.price }}:  <input type="text" name="editPrice" value=""><br></td>
-
+            <td>${{ value_name.price }}: <input type="text" name="editPrice" value=""><br></td>
+            <input type="submit" name="submit" value="edit value"></td>
+            </form>
         <tr><td>
-        <input type="submit" name="submit" value="edit value"></td>
+
+
 
         </tr>
     </tbody>
