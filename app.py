@@ -101,7 +101,15 @@ def editchanges():
 
 @app.route("/editedchange", methods=["POST", "GET"])
 def editedchange():
-	return request.form["editName"]
+	value = {}
+	value['Name'] = request.form["editName"] 
+	value['Id'] = request.form["editId"] 
+	value['Price'] = request.form["editPrice"]
+	return render_template("finaledited.html", value_name = value)
+
+
+
+
 
 
 
