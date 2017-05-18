@@ -101,10 +101,13 @@ def editchanges():
 
 @app.route("/editedchange", methods=["POST", "GET"])
 def editedchange():
+	conn = sqlite3.connect("stock.db")
+	c = conn.cursor()
 	value = {}
 	value['Name'] = request.form["editName"] 
 	value['Id'] = request.form["editId"] 
 	value['Price'] = request.form["editPrice"]
+	c.execute("UPDATE * FROM data WHERE name=?;", (name,))
 	return render_template("finaledited.html", value_name = value)
 
 
